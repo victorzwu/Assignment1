@@ -1,10 +1,9 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-export default function Finish({later}) {
+export default function Card() {
   return (
     <View>
-      <Text>Finish</Text>
     </View>
   )
 }

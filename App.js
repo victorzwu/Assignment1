@@ -9,24 +9,17 @@ export default function App() {
   const [validValues, setValidValues] = useState(false)
   const [confirmed, setConfirmed] = useState(false)
   const [later, setLater] = useState(false)
-    if(!validValues)
-    {
-      return <Starting valid={validValues}/>;
-
-    }
-    else if()
-    {
-
-    }
-    else{
-      return <Finish confirmSelected = {confirmed} laterSelected={later}/>;
-    }
+  return (
+    <View style={styles.container}>
+      <Starting />
+    </View>
+  )
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#0000FF',
     alignItems: 'center',
     justifyContent: 'center',
   },

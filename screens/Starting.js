@@ -1,5 +1,6 @@
-import { View, Text } from 'react-native'
+import { View, Text, TextInput } from 'react-native'
 import React from 'react'
+import Card from '../components/Card'
 
 export default function Starting() {
   return (
@@ -8,6 +9,7 @@ export default function Starting() {
       <TextInput />
       <Text>Phone Number</Text>
       <TextInput />
+      <Card />
     </View>
   )
 }
