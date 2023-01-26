@@ -9,7 +9,7 @@ import Finish from "./screens/Finish";
 export default function App() {
   const [page, setPage] = useState('Starting')
   const [email, setEmail] = useState('')
-  const [phone, setPhone] = useState(0)
+  const [phone, setPhone] = useState('')
   function pageCheck(pageText)
   {
     if(pageText == 'Starting')
@@ -25,13 +25,10 @@ export default function App() {
       setPage('Finish')
     }
   }
-  function changeEmail(emailText)
+  function setInformation(email, phone)
   {
-    setEmail(emailText)
-  }
-  function changePhone(phoneText)
-  {
-    setPhone(phoneText)
+    setEmail(email)
+    setPhone(phone)
   }
 
   return (
@@ -42,8 +39,8 @@ export default function App() {
       start={{ x: 0.5, y: 0 }}
       end={{ x: 0.5, y: 1 }}
     >
-      {page == 'Starting' && <Starting changePage = {pageCheck}/>}
-      {page == 'Confirm' && <Confirm changePage = {pageCheck} email phone/>}
+      {page == 'Starting' && <Starting changePage = {pageCheck} setInformation = {setInformation}/>}
+      {page == 'Confirm' && <Confirm changePage = {pageCheck} email = {email} phone = {phone}/>}
       {page == 'Finish' && <Finish changePage = {pageCheck}/>}
     </LinearGradient>
   );
