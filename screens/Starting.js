@@ -21,9 +21,7 @@ export default function Starting({ changePage, setInformation }) {
         setInformation(email, phone);
     }
   }
-  function reset(){
-
-  }
+  function reset() {}
   function changedEmailText(changedText) {
     if (signUp) {
       setSignUp(false);
@@ -42,23 +40,31 @@ export default function Starting({ changePage, setInformation }) {
       : setValidPhone(false);
   }
   return (
-    <View style = {styles.container}>
-      <View style = {{padding: 10}}>
+    <View style={styles.container}>
+      <View style={{ padding: 10 }}>
         <SignUpButton pressed={signUpPressed} />
       </View>
       <View>
         <Card>
-          <Text style={styles.text}>Email Address</Text>
+          <Text style={styles.largeText}>Email Address</Text>
           {signUp && !validEmail && <Text>Please enter a valid email.</Text>}
           <Input change={changedEmailText} />
-          <Text style={styles.text}>Phone Number</Text>
+          <Text style={styles.largeText}>Phone Number</Text>
           {signUp && !validPhone && (
             <Text>Please enter a valid phone number.</Text>
           )}
           <Input change={changedPhoneText} />
-          <View>
-          <Button onPress={() => reset()} title="Reset" color="red" />
-          <Button onPress={() => signUpPressed()} title="Sign Up" color="blue" />
+          <View style={styles.buttonPair}>
+            <View style = {{padding: 20}}>
+              <Button onPress={() => reset()} title="Reset" color="red" />
+            </View>
+            <View style = {{padding: 20}}>
+              <Button
+                onPress={() => signUpPressed()}
+                title="Sign Up"
+                color="blue"
+              />
+            </View>
           </View>
         </Card>
       </View>
@@ -73,10 +79,18 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  text:
-  {
-    color: 'purple',
+  largeText: {
+    color: "purple",
     padding: 5,
-    fontSize: 20
-  }
+    fontSize: 20,
+  },
+  smallText: {
+    color: "black",
+    padding: 5,
+    fontSize: 12,
+  },
+  buttonPair: {
+    flexDirection: "row",
+    justifyContent: "center"
+  },
 });
