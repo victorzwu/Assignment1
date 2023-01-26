@@ -1,15 +1,15 @@
-import { View, Text, Modal } from 'react-native'
+import { View, Text, Modal, StyleSheet } from 'react-native'
 import React from 'react'
 import Card from '../components/Card'
 
-export default function Confirm({changePage, email, phone}) {
+export default function Confirm({styles, changePage, email, phone}) {
   return (
-    <View>
+    <View style={styles.container}>
       <Card>
-        <Text>You have entered:</Text>
-        <Text>Email: {email}</Text>
-        <Text>Phone: {phone}</Text>
-        <Text>Please confirm they are correct.</Text>
+        <Text style = {styles.largeText}>You have entered:</Text>
+        <Text style = {styles.largeText}>{email}</Text>
+        <Text style = {styles.largeText}>{phone}</Text>
+        <Text style = {styles.largeText}>Please confirm they are correct.</Text>
       </Card>
     </View>
   )

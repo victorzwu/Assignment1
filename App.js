@@ -39,9 +39,10 @@ export default function App() {
       start={{ x: 0.5, y: 0 }}
       end={{ x: 0.5, y: 1 }}
     >
-      {page == 'Starting' && <Starting changePage = {changePage} setInformation = {setInformation}/>}
-      {page == 'Confirm' && <Confirm changePage = {changePage} email = {email} phone = {phone}/>}
-      {page == 'Finish' && <Finish changePage = {changePage}/>}
+      <Confirm styles = {styles} changePage = {changePage} email = {email} phone = {phone}/>
+      {/* {page == 'Starting' && <Starting styles = {styles} changePage = {changePage} setInformation = {setInformation}/>}
+      {page == 'Confirm' && <Confirm styles = {styles} changePage = {changePage} email = {email} phone = {phone}/>}
+      {page == 'Finish' && <Finish changePage = {changePage}/>} */}
     </LinearGradient>
   );
 }
@@ -49,8 +50,22 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#FFFFF",
     alignItems: "center",
+    justifyContent: "center"
+  },
+  largeText: {
+    color: "purple",
+    padding: 10,
+    fontSize: 20,
+  },
+  smallText: {
+    color: "black",
+    paddingHorizontal: 10,
+    fontSize: 15,
+  },
+  buttonPair: {
+    flexDirection: "row",
     justifyContent: "center",
   },
 });
+

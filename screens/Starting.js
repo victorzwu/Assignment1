@@ -5,7 +5,7 @@ import Card from "../components/Card";
 import Input from "../components/Input";
 import SignUpButton from "../components/SignUpButton";
 
-export default function Starting({ changePage, setInformation }) {
+export default function Starting({ styles, changePage, setInformation }) {
   const [validEmail, setValidEmail] = useState(false);
   const [validPhone, setValidPhone] = useState(false);
   const [email, setEmail] = useState("");
@@ -76,24 +76,3 @@ export default function Starting({ changePage, setInformation }) {
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    margin: 20,
-    alignItems: "center",
-  },
-  largeText: {
-    color: "purple",
-    padding: 10,
-    fontSize: 20,
-  },
-  smallText: {
-    color: "black",
-    paddingHorizontal: 10,
-    fontSize: 15,
-  },
-  buttonPair: {
-    flexDirection: "row",
-    justifyContent: "center",
-  },
-});
