@@ -10,7 +10,7 @@ export default function App() {
   const [page, setPage] = useState('Starting')
   const [email, setEmail] = useState('')
   const [phone, setPhone] = useState('')
-  function pageCheck(pageText)
+  function changePage(pageText)
   {
     if(pageText == 'Starting')
     {
@@ -39,9 +39,9 @@ export default function App() {
       start={{ x: 0.5, y: 0 }}
       end={{ x: 0.5, y: 1 }}
     >
-      {page == 'Starting' && <Starting changePage = {pageCheck} setInformation = {setInformation}/>}
-      {page == 'Confirm' && <Confirm changePage = {pageCheck} email = {email} phone = {phone}/>}
-      {page == 'Finish' && <Finish changePage = {pageCheck}/>}
+      {page == 'Starting' && <Starting changePage = {changePage} setInformation = {setInformation}/>}
+      {page == 'Confirm' && <Confirm changePage = {changePage} email = {email} phone = {phone}/>}
+      {page == 'Finish' && <Finish changePage = {changePage}/>}
     </LinearGradient>
   );
 }
