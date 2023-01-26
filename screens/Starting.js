@@ -41,24 +41,28 @@ export default function Starting({ changePage, setInformation }) {
   }
   return (
     <View style={styles.container}>
-      <View style={{ padding: 10 }}>
+      <View style={{ padding: 30 }}>
         <SignUpButton pressed={signUpPressed} />
       </View>
       <View>
         <Card>
           <Text style={styles.largeText}>Email Address</Text>
-          {signUp && !validEmail && <Text>Please enter a valid email.</Text>}
           <Input change={changedEmailText} />
-          <Text style={styles.largeText}>Phone Number</Text>
-          {signUp && !validPhone && (
-            <Text>Please enter a valid phone number.</Text>
+          {signUp && !validEmail && (
+            <Text style={styles.smallText}>Please enter a valid email.</Text>
           )}
+          <Text style={styles.largeText}>Phone Number</Text>
           <Input change={changedPhoneText} />
+          {signUp && !validPhone && (
+            <Text style={styles.smallText}>
+              Please enter a valid phone number.
+            </Text>
+          )}
           <View style={styles.buttonPair}>
-            <View style = {{padding: 20}}>
+            <View style={{ padding: 20 }}>
               <Button onPress={() => reset()} title="Reset" color="red" />
             </View>
-            <View style = {{padding: 20}}>
+            <View style={{ padding: 20 }}>
               <Button
                 onPress={() => signUpPressed()}
                 title="Sign Up"
@@ -77,20 +81,19 @@ const styles = StyleSheet.create({
     flex: 1,
     margin: 20,
     alignItems: "center",
-    justifyContent: "center",
   },
   largeText: {
     color: "purple",
-    padding: 5,
+    padding: 10,
     fontSize: 20,
   },
   smallText: {
     color: "black",
-    padding: 5,
-    fontSize: 12,
+    paddingHorizontal: 10,
+    fontSize: 15,
   },
   buttonPair: {
     flexDirection: "row",
-    justifyContent: "center"
+    justifyContent: "center",
   },
 });
