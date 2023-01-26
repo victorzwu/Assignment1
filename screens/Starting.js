@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Button } from "react-native";
 import { useState } from "react";
 import React from "react";
 import Card from "../components/Card";
@@ -20,6 +20,9 @@ export default function Starting({ changePage, setInformation }) {
         changePage("Confirm") &&
         setInformation(email, phone);
     }
+  }
+  function reset(){
+
   }
   function changedEmailText(changedText) {
     if (signUp) {
@@ -53,6 +56,10 @@ export default function Starting({ changePage, setInformation }) {
             <Text>Please enter a valid phone number.</Text>
           )}
           <Input change={changedPhoneText} />
+          <View>
+          <Button onPress={() => reset()} title="Reset" color="red" />
+          <Button onPress={() => signUpPressed()} title="Sign Up" color="blue" />
+          </View>
         </Card>
       </View>
     </View>

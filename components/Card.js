@@ -11,8 +11,6 @@ export default function Card(props) {
 
 const cardStyles = StyleSheet.create({
   card: {
-    width : '70%',
-    height : '50%',
     backgroundColor: 'white',
     shadowColor: 'black',
     shadowOffset: {
