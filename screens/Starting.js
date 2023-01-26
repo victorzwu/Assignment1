@@ -69,6 +69,7 @@ const styles = StyleSheet.create({
   text:
   {
     color: 'purple',
-    padding: 10
+    padding: 5,
+    fontSize: 20
   }
 });
