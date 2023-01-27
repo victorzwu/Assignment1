@@ -27,8 +27,9 @@ export default function Finish({ styles, changePage, confirmed, phone }) {
           <Text style={styles.largeText}>
               Sorry to see you go.
             </Text>
-            <Image></Image>
+            <Image source = {require('../assets/disappointed-face.png')}></Image>
         </Card>
+        <Button onPress = {()=> changePage('Starting')} title={'Start Again'} color = {'blue'}></Button>
       </View>
     );
   }
