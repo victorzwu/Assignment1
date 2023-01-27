@@ -3,6 +3,17 @@ import React from "react";
 import Card from "../components/Card";
 
 export default function Confirm({ styles, changePage, email, phone }) {
+  function goBack(){
+    changePage('Starting')
+  }
+  function confirm(){
+    changePage('Finish')
+  }
+  function finishLater()
+  {
+    changePage('Finish')
+  }
+
   return (
     <View style={styles.container}>
       <Card>
@@ -24,7 +35,6 @@ export default function Confirm({ styles, changePage, email, phone }) {
             color="blue"
           />
         </View>
-
         <View style={{ padding: 5 }}>
           <Button
             onPress={() => finishLater()}
