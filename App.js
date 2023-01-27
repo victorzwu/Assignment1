@@ -10,6 +10,7 @@ export default function App() {
   const [page, setPage] = useState('Starting')
   const [email, setEmail] = useState('')
   const [phone, setPhone] = useState('')
+  const [confirmed, setConfirmed] = useState(false)
   function changePage(pageText)
   {
     if(pageText == 'Starting')
@@ -41,7 +42,7 @@ export default function App() {
     >
       {page == 'Starting' && <Starting styles = {styles} changePage = {changePage} setInformation = {setInformation}/>}
       {page == 'Confirm' && <Confirm styles = {styles} changePage = {changePage} email = {email} phone = {phone}/>}
-      {page == 'Finish' && <Finish changePage = {changePage}/>}
+      {page == 'Finish' && <Finish styles = {styles} changePage = {changePage} confirmed={confirmed} phone = {phone}/>}
     </LinearGradient>
   );
 }
@@ -50,7 +51,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "center",
   },
   largeText: {
     color: "purple",

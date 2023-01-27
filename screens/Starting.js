@@ -75,4 +75,3 @@ export default function Starting({ styles, changePage, setInformation }) {
     </View>
   );
 }
-
