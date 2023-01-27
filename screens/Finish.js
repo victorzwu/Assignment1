@@ -3,6 +3,7 @@ import React from "react";
 import Card from "../components/Card";
 
 export default function Finish({ styles, changePage, confirmed, phone }) {
+  const lastNum = parseInt(phone) % 10;
   return (
     <View style={styles.container}>
       <Card>
