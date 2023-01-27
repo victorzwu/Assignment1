@@ -11,16 +11,18 @@ export default function Starting({ styles, changePage, setInformation }) {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [signUp, setSignUp] = useState(false);
+  const [reset, setReset] = useState(false);
+
   function signUpPressed() {
-    setSignUp(true);
-    {
-      if (signUp && validEmail && validPhone) {
-        changePage("Confirm");
+    setSignUp(true); //this might take awhile
+      if (validEmail && validPhone) {
         setInformation(email, phone);
+        changePage("Confirm");
       }
-    }
   }
-  function reset() {}
+  function resetText() {
+    setReset(true)
+  }
   function changedEmailText(changedText) {
     if (signUp) {
       setSignUp(false);
@@ -46,12 +48,12 @@ export default function Starting({ styles, changePage, setInformation }) {
       <View>
         <Card>
           <Text style={styles.largeText}>Email Address</Text>
-          <Input change={changedEmailText} />
+          <Input change={changedEmailText} reset = {reset}/>
           {signUp && !validEmail && (
             <Text style={styles.smallText}>Please enter a valid email.</Text>
           )}
           <Text style={styles.largeText}>Phone Number</Text>
-          <Input change={changedPhoneText} />
+          <Input change={changedPhoneText} reset = {reset}/>
           {signUp && !validPhone && (
             <Text style={styles.smallText}>
               Please enter a valid phone number.
@@ -59,7 +61,7 @@ export default function Starting({ styles, changePage, setInformation }) {
           )}
           <View style={styles.buttonPair}>
             <View style={{ padding: 20 }}>
-              <Button onPress={() => reset()} title="Reset" color="red" />
+              <Button onPress={() => resetText()} title="Reset" color="red" />
             </View>
             <View style={{ padding: 20 }}>
               <Button

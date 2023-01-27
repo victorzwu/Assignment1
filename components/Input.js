@@ -1,10 +1,16 @@
 import { View, Text, TextInput } from 'react-native'
+import { useState } from 'react'
 import React from 'react'
 
-export default function Input({change}) {
+export default function Input({change, reset}) {
+  const [value, setValue] = useState('')
+  if(reset)
+  {
+    setValue('')
+  }
   return (
       <View style = {{paddingHorizontal: 10}}>
-        <TextInput style = {{fontSize: 20, paddingBottom: 5}} textAlign ={'center'} onChangeText={(changedText)=>{change(changedText)}}/>
+        <TextInput value = {value} style = {{fontSize: 20, paddingBottom: 5}} textAlign ={'center'} onChangeText={(changedText)=>{change(changedText), setValue(changedText)}}/>
         <View style = {{backgroundColor: 'purple', width: 250, height: 2 }} />
       </View>
   )
