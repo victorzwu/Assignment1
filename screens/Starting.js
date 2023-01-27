@@ -36,10 +36,9 @@ export default function Starting({ styles, changePage, setInformation }) {
       ? setValidPhone(true)
       : setValidPhone(false);
   }
-  function resetText()
-  {
-    setEmail('')
-    setPhone('')
+  function resetText() {
+    setEmail("");
+    setPhone("");
   }
   return (
     <View style={styles.container}>
