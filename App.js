@@ -39,10 +39,9 @@ export default function App() {
       start={{ x: 0.5, y: 0 }}
       end={{ x: 0.5, y: 1 }}
     >
-      <Confirm styles = {styles} changePage = {changePage} email = {email} phone = {phone}/>
-      {/* {page == 'Starting' && <Starting styles = {styles} changePage = {changePage} setInformation = {setInformation}/>}
+      {page == 'Starting' && <Starting styles = {styles} changePage = {changePage} setInformation = {setInformation}/>}
       {page == 'Confirm' && <Confirm styles = {styles} changePage = {changePage} email = {email} phone = {phone}/>}
-      {page == 'Finish' && <Finish changePage = {changePage}/>} */}
+      {page == 'Finish' && <Finish changePage = {changePage}/>}
     </LinearGradient>
   );
 }
