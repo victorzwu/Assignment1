@@ -5,7 +5,7 @@ import Card from "../components/Card";
 export default function Finish({ styles, changePage, confirmed, phone }) {
   const lastNum = parseInt(phone) % 10;
   const url ='https://picsum.photos/id/'+ lastNum +'/100/100';
-  if({confirmed})
+  if(confirmed==true)
   {
     return (
       <View style={styles.container}>
@@ -14,7 +14,7 @@ export default function Finish({ styles, changePage, confirmed, phone }) {
               Thank you for signing up. Here's a picture for you (based on the
               last digit of your phone number).
             </Text>
-            <Image source = {url}/>
+            <Image source = {{uri:url}}/>
         </Card>
         <Button onPress = {()=> changePage('Starting')} title={'Start Again'} color = {'blue'}></Button>
       </View>

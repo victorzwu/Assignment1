@@ -31,7 +31,10 @@ export default function App() {
     setEmail(email)
     setPhone(phone)
   }
-
+  function changeConfirm(change)
+  {
+    setConfirmed(change)
+  }
   return (
     //conditional operators
     <LinearGradient
@@ -41,7 +44,7 @@ export default function App() {
       end={{ x: 0.5, y: 1 }}
     >
       {page == 'Starting' && <Starting styles = {styles} changePage = {changePage} setInformation = {setInformation}/>}
-      {page == 'Confirm' && <Confirm styles = {styles} changePage = {changePage} email = {email} phone = {phone}/>}
+      {page == 'Confirm' && <Confirm styles = {styles} changePage = {changePage} email = {email} phone = {phone} changeConfirm= {changeConfirm}/>}
       {page == 'Finish' && <Finish styles = {styles} changePage = {changePage} confirmed={confirmed} phone = {phone}/>}
     </LinearGradient>
   );

@@ -2,16 +2,18 @@ import { View, Text, Button } from "react-native";
 import React from "react";
 import Card from "../components/Card";
 
-export default function Confirm({ styles, changePage, email, phone }) {
+export default function Confirm({ styles, changePage, email, phone, changeConfirm }) {
   function goBack(){
     changePage('Starting')
   }
   function confirm(){
     changePage('Finish')
+    changeConfirm(true)
   }
   function finishLater()
   {
     changePage('Finish')
+    changeConfirm(false)
   }
 
   return (
