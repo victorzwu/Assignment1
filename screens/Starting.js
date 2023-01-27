@@ -14,11 +14,10 @@ export default function Starting({ styles, changePage, setInformation }) {
   function signUpPressed() {
     setSignUp(true);
     {
-      signUp &&
-        validEmail &&
-        validPhone &&
-        changePage("Confirm") &&
+      if (signUp && validEmail && validPhone) {
+        changePage("Confirm");
         setInformation(email, phone);
+      }
     }
   }
   function reset() {}
