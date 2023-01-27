@@ -21,6 +21,6 @@ const cardStyles = StyleSheet.create({
     shadowOpacity: 0.44,
     shadowRadius: 10.32,
     elevation: 16,
-    borderRadius: 4
+    borderRadius: 4,
   },
 });
