@@ -12,7 +12,7 @@ export default function SignUpButton({ pressed }) {
 const styles = StyleSheet.create({
   button: {
     borderColor: "purple",
-    borderWidth: "2",
+    borderWidth: 2,
     padding: 1,
   },
 });

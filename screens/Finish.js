@@ -2,9 +2,11 @@ import { View, Text, Button, Image } from "react-native";
 import React from "react";
 import Card from "../components/Card";
 
-export default function Finish({ styles, changePage, confirmed, phone }) {
+export default function Finish({ styles, changePage, confirmed, phone, setInformation }) {
   const lastNum = parseInt(phone) % 10;
   const url = "https://picsum.photos/id/" + lastNum + "/100/100";
+  const emptyEmail = '';
+  const emptyPhone = '';
   if (confirmed == true) {
     return (
       <View style={styles.container}>
@@ -18,7 +20,7 @@ export default function Finish({ styles, changePage, confirmed, phone }) {
           </View>
         </Card>
         <Button
-          onPress={() => changePage("Starting")}
+          onPress={() => {changePage("Starting"); setInformation(email = {emptyEmail}, phone= {emptyPhone});}}
           title={"Start Again"}
           color={"blue"}
         ></Button>
@@ -32,7 +34,7 @@ export default function Finish({ styles, changePage, confirmed, phone }) {
           <Image style = {{width: '70%', height: undefined, aspectRatio: 1}} source={require("../assets/disappointed-face.png")}></Image>
         </Card>
         <Button
-          onPress={() => changePage("Starting")}
+          onPress={() => {changePage("Starting"); setInformation(email = {emptyEmail}, phone= {emptyPhone});}}
           title={"Start Again"}
           color={"blue"}
         ></Button>

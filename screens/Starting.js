@@ -11,7 +11,6 @@ export default function Starting({ styles, changePage, setInformation }) {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [signUp, setSignUp] = useState(false);
-  const [reset, setReset] = useState(false);
 
   function signUpPressed() {
     setSignUp(true); //this might take awhile
@@ -19,9 +18,6 @@ export default function Starting({ styles, changePage, setInformation }) {
         setInformation(email, phone);
         changePage("Confirm");
       }
-  }
-  function resetText() {
-    setReset(true)
   }
   function changedEmailText(changedText) {
     if (signUp) {
@@ -48,12 +44,12 @@ export default function Starting({ styles, changePage, setInformation }) {
       <View>
         <Card>
           <Text style={styles.largeText}>Email Address</Text>
-          <Input change={changedEmailText} reset = {reset}/>
+          <Input change={changedEmailText}/>
           {signUp && !validEmail && (
             <Text style={styles.smallText}>Please enter a valid email.</Text>
           )}
           <Text style={styles.largeText}>Phone Number</Text>
-          <Input change={changedPhoneText} reset = {reset}/>
+          <Input change={changedPhoneText}/>
           {signUp && !validPhone && (
             <Text style={styles.smallText}>
               Please enter a valid phone number.
