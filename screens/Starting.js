@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Button } from "react-native";
+import { View, Text, StyleSheet, Button, TextInput } from "react-native";
 import { useState } from "react";
 import React from "react";
 import Card from "../components/Card";
@@ -14,10 +14,10 @@ export default function Starting({ styles, changePage, setInformation }) {
 
   function signUpPressed() {
     setSignUp(true); //this might take awhile
-      if (validEmail && validPhone) {
-        setInformation(email, phone);
-        changePage("Confirm");
-      }
+    if (validEmail && validPhone) {
+      setInformation(email, phone);
+      changePage("Confirm");
+    }
   }
   function changedEmailText(changedText) {
     if (signUp) {
@@ -36,6 +36,11 @@ export default function Starting({ styles, changePage, setInformation }) {
       ? setValidPhone(true)
       : setValidPhone(false);
   }
+  function resetText()
+  {
+    setEmail('')
+    setPhone('')
+  }
   return (
     <View style={styles.container}>
       <View style={{ padding: 30 }}>
@@ -44,12 +49,36 @@ export default function Starting({ styles, changePage, setInformation }) {
       <View>
         <Card>
           <Text style={styles.largeText}>Email Address</Text>
-          <Input change={changedEmailText}/>
+          <View style={{ paddingHorizontal: 10 }}>
+            <TextInput
+              value={email}
+              style={{ fontSize: 20, paddingBottom: 5 }}
+              textAlign={"center"}
+              onChangeText={(changedText) => {
+                changedEmailText(changedText);
+              }}
+            />
+            <View
+              style={{ backgroundColor: "purple", width: 250, height: 2 }}
+            />
+          </View>
           {signUp && !validEmail && (
             <Text style={styles.smallText}>Please enter a valid email.</Text>
           )}
           <Text style={styles.largeText}>Phone Number</Text>
-          <Input change={changedPhoneText}/>
+          <View style={{ paddingHorizontal: 10 }}>
+            <TextInput
+              value={phone}
+              style={{ fontSize: 20, paddingBottom: 5 }}
+              textAlign={"center"}
+              onChangeText={(changedText) => {
+                changedPhoneText(changedText);
+              }}
+            />
+            <View
+              style={{ backgroundColor: "purple", width: 250, height: 2 }}
+            />
+          </View>
           {signUp && !validPhone && (
             <Text style={styles.smallText}>
               Please enter a valid phone number.
