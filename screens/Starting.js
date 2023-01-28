@@ -2,7 +2,6 @@ import { View, Text, StyleSheet, Button, TextInput } from "react-native";
 import { useState } from "react";
 import React from "react";
 import Card from "../components/Card";
-import Input from "../components/Input";
 import SignUpButton from "../components/SignUpButton";
 
 export default function Starting({ styles, changePage, setInformation }) {
@@ -37,8 +36,8 @@ export default function Starting({ styles, changePage, setInformation }) {
       : setValidPhone(false);
   }
   function resetText() {
-    setEmail("");
-    setPhone("");
+    setEmail(null);
+    setPhone(null);
   }
   return (
     <View style={styles.container}>
