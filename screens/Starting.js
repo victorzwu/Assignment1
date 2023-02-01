@@ -40,7 +40,7 @@ export default function Starting({ styles, changePage, setInformation }) {
     setPhone(null);
   }
   return (
-    <View style={styles.container}>
+    <View style={startingStyles.container}>
       <View style={{ padding: 30 }}>
         <SignUpButton pressed={signUpPressed} />
       </View>
@@ -99,3 +99,10 @@ export default function Starting({ styles, changePage, setInformation }) {
     </View>
   );
 }
+
+const startingStyles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: "center",
+  }
+});
