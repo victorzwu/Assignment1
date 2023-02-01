@@ -36,8 +36,8 @@ export default function Starting({ styles, changePage, setInformation }) {
       : setValidPhone(false);
   }
   function resetText() {
-    setEmail(null);
-    setPhone(null);
+    changedEmailText('')
+    changedPhoneText('')
   }
   return (
     <View style={startingStyles.container}>
